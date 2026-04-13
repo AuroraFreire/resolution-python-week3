@@ -35,4 +35,4 @@ uvicorn main:app --reload
 * Due dates should be in `YYYY-MM-DD` format
 
 ## quick note
-i forgot to create the repo so hackatime only shows 1 hour (i have 2 in reality) :3
+i forgot to create the repo so hackatime only shows 1h40m hour (i have ~3h in reality) :3
