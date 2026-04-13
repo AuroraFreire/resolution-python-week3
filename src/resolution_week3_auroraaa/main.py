@@ -3,6 +3,7 @@ from pydantic import BaseModel
 import os
 import json
 from datetime import date
+import uvicorn
 
 
 app = FastAPI()
@@ -80,5 +81,11 @@ async def search_tasks(q: str):
 async def get_overdue():
     tasks = load_tasks()
     today = str(date.today())
-    overdue = [t for t in tasks if t.get("due_date") and t["due date"] < today and not t["done"]]
+    overdue = [t for t in tasks if t.get("due_date") and t["due_date"] < today and not t["done"]]
     return overdue
+
+def main():
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+
+if __name__ == "__main__":
+    main()
